@@ -8,7 +8,7 @@ j=1;
 % Trazimo prvi maksimum u okviru prozora
 while y(j)==0 && j<win
     j=j+1;
-end;
+end
 
 % Kada smo nasli prvi maksimum pustamo blanking time (od tog trentka se
 % meri tau), a nakon zavrsetka blanking time-a krece eksponencijalni signal
@@ -22,7 +22,7 @@ while j<win && y(j)<A*exp(-lambda*(j-t))
     % (eksponencijalna f-ja opada sve dok ne udari u naredni maksimum)
     j=j+1;
     % Povecavamo indeks dok ne dodjemo da maksimuma
-end;
+end
 e=j-t; % procena pitch periode
 
 %poboljsanje, da budemo sigurni da smo iskoristili ceo prozor na najbolji
