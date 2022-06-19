@@ -6,18 +6,19 @@ if (isempty(maks))
     return 
 end
 j = 0;
-for i = maks_indeks + tau-1:length(y)
-    if ((y(i) > 0) && (maks*exp(-lambda*fs*(i-maks_indeks-tau)) <  y(i)))
-        j = i;
+i = maks_indeks+tau-1;
+A=maks;
+while i<length(y)
+    if ((y(i)>A*exp(-lambda*fs*(i-maks_indeks-tau))) && y(i)>0)
+        j=i;
         break;
     end
+    i=i+1;
 end
 if (j == 0)
     e = 0;
-    return
 else
     e = j - maks_indeks;
-    return
 end
 
 end
