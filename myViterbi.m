@@ -13,7 +13,7 @@ N=length(p);
 T=length(v);
 
 
-    disp('DHMM')
+    
     % initialization
     delta(1,:)=p.*b(:,v(1))';
     psi(1,:)=zeros(1,N);
